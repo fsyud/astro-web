@@ -11,15 +11,16 @@ tags: ["webAssembly", "dart"]
 
 - Dart
 
-### WebAssembly 
+### WebAssembly
 
 自从 Web 成为一个不仅可用于文档以及应用的平台以来，一些最先进的应用将网络浏览器发挥到了极限。通过与低阶语言进行交互来提升性能，已出现在许多较高级别的语言中，从而达到“更接近现实”的方法。例如，Java 具有 Java 原生接口。对于 JavaScript，这种较低级别的语言是 WebAssembly。
+
+可进一步参考：<https://wasmbyexample.dev/>
 
 汇编语言
 您是否使用过汇编语言进行编程？在计算机编程中，汇编语言（通常简称为汇编语言，通常简称为 ASM 或 asm）是任何低级别编程语言，其中的指令与架构的机器代码指令之间有非常强的对应关系。
 
 例如，以 Intel® 64 和 IA-32 架构 (PDF) 为例，MUL 指令（用于多乘）会对第一个运算数（目标运算数）和第二个运算数（源运算数）进行无符号乘法，并将结果存储在目标运算数中。非常简单地，目标运算数是位于寄存器 AX 中的隐式运算数，源运算数位于通用寄存器（例如 CX）中。结果会再次存储在寄存器 AX 中。请参考以下 x86 代码示例：
-
 
 ```
 mov ax, 5  ; Set the value of register AX to 5.
@@ -30,7 +31,6 @@ mul cx     ; Multiply the value of register AX (5)
 
 ```
 
-
 相比之下，如果任务的目标是将 5 和 10 相乘，那么您可能会在 JavaScript 中编写类似如下的代码：
 
 ```
@@ -38,6 +38,7 @@ const factor1 = 5;
 const factor2 = 10;
 const result = factor1 * factor2;
 ```
+
 采用汇编方法的优势在于，此类低级别和机器优化的代码比高级别、人工优化的代码更高效。上述情况无关紧要，但您可以想象，对于更复杂的操作，差异可能会很大。
 
 顾名思义，x86 代码依赖于 x86 架构。如果有一种方法的汇编代码不依赖于特定架构，但会继承汇编的性能优势，会怎么样？
@@ -90,6 +91,7 @@ WebAssembly 有两种表示法：文本和二进制。您在上方看到的是�
 ```
 
 #### 二进制表示法
+
 使用文件扩展名 .wasm 的二进制格式不适合人类消费，更不用说是人工创建。您可以使用 wat2wasm 之类的工具将上述代码转换为以下二进制表示形式。（注释通常不是二进制表示的一部分，而是由 wat2wasm 工具添加的，以便于我们理解。）
 
 ```
@@ -164,10 +166,9 @@ WebAssembly 有两种表示法：文本和二进制。您在上方看到的是�
 000002a: 24                                    ; FIXUP section size
 ```
 
-
 #### 编译为 WebAssembly
-如您所见，.wat 和 .wasm 都不是特别友好。这正是 Emscripten 等编译器的作用。它可让您从 C 和 C++ 等更高级别的语言进行编译。我们还提供适用于 Rust 等其他语言的其他编译器。请参考以下 C 代码：
 
+如您所见，.wat 和 .wasm 都不是特别友好。这正是 Emscripten 等编译器的作用。它可让您从 C 和 C++ 等更高级别的语言进行编译。我们还提供适用于 Rust 等其他语言的其他编译器。请参考以下 C 代码：
 
 ```
 #include <stdio.h>
@@ -181,13 +182,13 @@ int main() {
 通常，您可以使用编译器 gcc 编译此 C 程序。
 
 ```
-$ gcc hello.c -o hello
+gcc hello.c -o hello
 ```
 
 安装 Emscripten 后，您可以使用 emcc 命令和几乎相同的参数将其编译为 WebAssembly：
 
 ```
-$ emcc hello.c -o hello.html
+emcc hello.c -o hello.html
 ```
 
 这将创建一个 hello.wasm 文件和 HTML 封装容器文件 hello.html。从网络服务器提供 hello.html 文件时，您将看到在开发者工具控制台中输出的 "Hello World"。
@@ -195,7 +196,7 @@ $ emcc hello.c -o hello.html
 还有一种方法可以在不使用 HTML 封装容器的情况下编译为 WebAssembly：
 
 ```c
-$ emcc hello.c -o hello.js
+emcc hello.c -o hello.js
 ```
 
 与之前一样，这将创建一个 hello.wasm 文件，但这次是创建一个 hello.js 文件，而不是 HTML 封装容器。如需进行测试，请使用 Node.js 等运行生成的 JavaScript 文件 hello.js：
@@ -211,7 +212,7 @@ Hello World
 
 - 注意 ：请继续阅读将 mkbitmap 编译为 WebAssembly 一文，其中介绍了如何将一个相当简单但又不过度复杂的 C 程序编译到 WebAssembly。本文以 mkbitmap 为例，介绍了如何在 JavaScript 中将 Wasm 程序用作库，以便将文件作为输入并输出图像。
 
-参考 https://web.dev/articles/what-is-webassembly?hl=zh-cn
+参考 <https://web.dev/articles/what-is-webassembly?hl=zh-cn>
 
 ## Dart 概览
 
@@ -278,6 +279,7 @@ class Point {
 ```
 
 ### Dart 库
+
 - Dart 拥有 丰富的核心库，为许多日常编程任务提供了必要工具：
 
 - 为每个 Dart 程序提供的内置类型，集合与其他核心功能 (dart:core)
@@ -300,5 +302,4 @@ class Point {
 
 - 基于 Web 的应用程序中需要与浏览器和文档对象模型 (DOM) 交互的 HTML 元素和其他资源 (dart:html)
 
-更多参考 https://dart.cn/overview
-
+更多参考 <https://dart.cn/overview>
