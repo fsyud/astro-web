@@ -3,7 +3,6 @@ title: "Building a react native app-01"
 description: "react native notes"
 publishDate: " 05 Dec 2023"
 tags: ["react-native"]
-draft:
 ---
 
 [项目地址 FreeSoulRN](https://github.com/ligdy7/FreeSoulRN)
