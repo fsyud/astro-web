@@ -27,6 +27,8 @@ React Native 允许您为 Android 和 iOS 构建自己的 Native Components（�
 
 React Native 还包括一组基本的，随时可用的原生组件，您可以使用它们来构建您的应用程序。这些是 React Native 的核心组件。
 
+![Snipaste_2023-12-21_13-54-20](https://github.com/ligdy7/astro-web/assets/26371465/3fa424e9-cb99-463e-85f3-1d2892ae3aa1)
+
 示例请参考
 [https://reactnative.cn/docs/using-a-listview](https://reactnative.cn/docs/using-a-listview)
 

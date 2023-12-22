@@ -69,17 +69,27 @@ Android Studio 默认会安装最新版本的 Android SDK。目前编译 React N
 
 SDK Manager 还可以在 Android Studio 的"Preferences"菜单中找到。具体路径是Appearance & Behavior → System Settings → Android SDK。
 
+![Snipaste_2023-12-21_14-15-23](https://github.com/ligdy7/astro-web/assets/26371465/9bc05b5c-e8a9-4791-b1b0-52a72bf56ca9)
+
+
 在 SDK Manager 中选择"SDK Platforms"选项卡，然后在右下角勾选"Show Package Details"。展开Android 13 (Tiramisu)选项，确保勾选了下面这些组件（如果你看不到这个界面，则需要使用稳定的代理软件）：
 
 - Android SDK Platform 33
 - Intel x86 Atom_64 System Image（官方模拟器镜像文件，使用非官方模拟器不需要安装此组件）
   然后点击"SDK Tools"选项卡，同样勾中右下角的"Show Package Details"。展开"Android SDK Build-Tools"选项，确保选中了 React Native 所必须的33.0.0版本。你可以同时安装多个其他版本。
+![Snipaste_2023-12-21_14-17-34](https://github.com/ligdy7/astro-web/assets/26371465/b4200a00-9b45-483c-8d30-705b1986c943)
+
+
+  ![Snipaste_2023-12-21_14-17-52](https://github.com/ligdy7/astro-web/assets/26371465/b78ac623-7aad-4143-9ae8-69cb176d3e07)
+
 
 ### 3. 配置 ANDROID_HOME 环境变量
 
 React Native 需要通过环境变量来了解你的 Android SDK 装在什么路径，从而正常进行编译。
 
 打开控制面板 -> 系统和安全 -> 系统 -> 高级系统设置 -> 高级 -> 环境变量 -> 新建，创建一个名为ANDROID_HOME的环境变量（系统或用户变量均可），指向你的 Android SDK 所在的目录（具体的路径可能和下图不一致，请自行确认）：
+
+
 
 SDK 默认是安装在下面的目录：
 
@@ -89,7 +99,12 @@ C:\Users\你的用户名\AppData\Local\Android\Sdk
 
 你可以在 Android Studio 的"Preferences"菜单中查看 SDK 的真实路径，具体是Appearance & Behavior → System Settings → Android SDK。
 
+![Snipaste_2023-12-21_14-20-36](https://github.com/ligdy7/astro-web/assets/26371465/ed34a58a-162e-4002-a609-b84812e6d12b)
+![Snipaste_2023-12-21_14-22-26](https://github.com/ligdy7/astro-web/assets/26371465/abea52ee-cf3b-406c-8d6f-625d5354b110)
+
+
 你需要关闭现有的命令符提示窗口然后重新打开，这样新的环境变量才能生效。
+
 
 ### 4. 把一些工具目录添加到环境变量 Path
 
@@ -103,6 +118,10 @@ C:\Users\你的用户名\AppData\Local\Android\Sdk
 ```
 
 **JAVA_HOME**也需要配置到系统变量
+
+![Snipaste_2023-12-21_14-26-03](https://github.com/ligdy7/astro-web/assets/26371465/2f48ce23-52d5-4392-ae90-56e2b0129613)
+![Snipaste_2023-12-21_14-27-16](https://github.com/ligdy7/astro-web/assets/26371465/ffe1c047-1228-445f-8b6e-9bb688b8bb0e)
+
 
 ## 创建新项目
 
@@ -150,6 +169,9 @@ Android Studio AVD Manager
 
 如果你刚刚才安装 Android Studio，那么可能需要先创建一个虚拟设备。点击"Create Virtual Device..."，然后选择所需的设备类型并点击"Next"，然后选择Tiramisu API Level 33 image.
 
+![Snipaste_2023-12-21_14-30-35](https://github.com/ligdy7/astro-web/assets/26371465/4aa9303e-312c-41fb-bd1a-40dba00f1a1c)
+
+
 > 译注：请不要轻易点击 Android Studio 中可能弹出的建议更新项目中某依赖项的建议，否则可能导致无法运行。
 
 ## 编译并运行 React Native 应用
@@ -167,6 +189,9 @@ yarn android
 yarn start
 yarn react-native run-android
 ```
+
+![Snipaste_2023-12-21_14-32-07](https://github.com/ligdy7/astro-web/assets/26371465/c7a677e9-0141-43e2-87b6-836bae44bdf1)
+
 
 如果配置没有问题，你应该可以看到应用自动安装到设备上并开始运行。注意第一次运行时需要下载大量编译依赖，耗时可能数十分钟。此过程严重依赖稳定的代理软件，否则将频繁遭遇链接超时和断开，导致无法运行。
 
