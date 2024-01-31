@@ -5,7 +5,7 @@ publishDate: " 07 Dec 2023"
 tags: ["react-native"]
 ---
 
-[项目地址 FreeSoulRN](https://github.com/ligdy7/FreeSoulRN)
+[项目地址 FreeSoulRN](https://github.com/fsyud/FreeSoulRN)
 
 ## 打包发布
 
@@ -18,8 +18,7 @@ Android 要求所有应用都有一个数字签名才会被允许安装在用户
 keytool -genkeypair -v -storetype PKCS12 -keystore my-upload-key.keystore -alias my-key-alias -keyalg RSA -keysize 2048 -validity 10000
 ```
 
-![Snipaste_2023-12-21_14-40-43](https://github.com/ligdy7/astro-web/assets/26371465/71aabfb9-4d9d-457c-928b-3245a1bd5741)
-
+![Snipaste_2023-12-21_14-40-43](https://github.com/fsyud/astro-web/assets/26371465/71aabfb9-4d9d-457c-928b-3245a1bd5741)
 
 **keytool**需配置环境变量，通过`管理员身份`打开Powershell
 
@@ -92,6 +91,6 @@ cd android
 下载android模拟机 [MUMU](https://mumu.163.com/)
 
 完成
-![Snipaste_2023-12-21_14-47-16](https://github.com/ligdy7/astro-web/assets/26371465/9eded7d7-d46a-4eb6-bc5d-e58c2e658dd8)
+![Snipaste_2023-12-21_14-47-16](https://github.com/fsyud/astro-web/assets/26371465/9eded7d7-d46a-4eb6-bc5d-e58c2e658dd8)
 
 参考 [https://reactnative.dev/docs/signed-apk-android](https://reactnative.dev/docs/signed-apk-android)

@@ -4,7 +4,7 @@ import PostPreview from "@/components/blog/PostPreview";
 import SocialList from "@/components/SocialList";
 import { getAllPosts, sortMDByDate } from "@/utils";
 
-const MAX_POSTS = 10;
+const MAX_POSTS = 6;
 const allPosts = await getAllPosts();
 const allPostsByDate = sortMDByDate(allPosts).slice(0, MAX_POSTS);
 
@@ -56,9 +56,9 @@ const cactusTech: Array<{ title: string; desc: string; href: string }> = [
 	<section>
 		<h1 class="title mb-6">Hello World!</h1>
 		<p class="mb-4">
-			Hi, I am a Front End Engineer, chasing dreams and things that interest me. In my free time, I like
-			traveling and playing games. I prefer to watch movies quietly, because in the process I can
-			think quietly. Finally, I hope you see something that interests you in my blog
+			Hi, I am a Front End Engineer, chasing dreams and things that interest me. In my free time, I
+			like traveling and playing games. I prefer to watch movies quietly, because in the process I
+			can think quietly. Finally, I hope you see something that interests you in my blog
 		</p>
 		<SocialList />
 	</section>

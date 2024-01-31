@@ -6,7 +6,7 @@ tags: ["todo"]
 draft: true
 ---
 
-[项目地址 flutter-music](https://github.com/ligdy7/music-flutter)
+[项目地址 flutter-music](https://github.com/fsyud/music-flutter)
 
 在 Windows 操作系统上安装和配置 Flutter 开发环境
 
