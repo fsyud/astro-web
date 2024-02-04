@@ -38,6 +38,7 @@ const { headings } = await post.render();
 	const observer = new IntersectionObserver(callback);
 	observer.observe(targetHeader);
 </script>
+<script type="module" src="https://cdn.skypack.dev/giscus"></script>
 
 <BaseLayout meta={{ title, description, articleDate, ogImage: socialImage }}>
 	<div class="gap-x-10 lg:flex lg:items-start">
@@ -48,6 +49,24 @@ const { headings } = await post.render();
 				class="prose prose-sm prose-cactus mt-12 prose-headings:font-semibold prose-headings:text-accent-2 prose-headings:before:absolute prose-headings:before:-ms-4 prose-headings:before:text-accent prose-headings:before:content-['#'] prose-th:before:content-none"
 			>
 				<slot />
+				<giscus-widget
+					src="https://giscus.app/client.js"
+					data-repo="fsyud/astro-web"
+					data-repo-id="R_kgDOKzwqTA"
+					data-category="General"
+					data-category-id="DIC_kwDOKzwqTM4Cc7Xb"
+					data-mapping="pathname"
+					data-strict="0"
+					data-reactions-enabled="1"
+					data-emit-metadata="0"
+					data-input-position="top"
+					data-theme="light"
+					data-lang="zh-CN"
+					data-loading="lazy"
+					crossorigin="anonymous"
+					async
+				>
+				</giscus-widget>
 				<WebMentions />
 			</div>
 		</article>
